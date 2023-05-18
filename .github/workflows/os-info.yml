@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 
 jobs:
-  OS-info:
+  Runner-info:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
