@@ -1,0 +1,51 @@
+name: Display Runner OS Details
+
+on: 
+  workflow_dispatch
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Display MacOS Details
+      if: runner.os == 'macOS'
+      run: |
+        echo "OS Details:"
+        uname -a
+        echo "CPU Details:"
+        sysctl -n machdep.cpu
+        echo "Memory Details:"
+        vm_stat
+        echo "Disk Details:"
+        df -h
+
+    - name: Display Ubuntu Details
+      if: runner.os == 'Linux'
+      run: |
+        echo "OS Details:"
+        uname -a
+        echo "CPU Details:"
+        lscpu
+        echo "Memory Details:"
+        free -h
+        echo "Disk Details:"
+        df -h
+
+    - name: Display Windows Details
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: |
+        echo "OS Details:"
+        systeminfo
+        echo "CPU Details:"
+        Get-WmiObject -Query "Select * from Win32_Processor"
+        echo "Memory Details:"
+        Get-WmiObject -Query "Select * from Win32_PhysicalMemory"
+        echo "Disk Details:"
+        Get-WmiObject -Query "Select * from Win32_LogicalDisk"
