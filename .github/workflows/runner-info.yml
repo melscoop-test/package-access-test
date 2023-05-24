@@ -44,8 +44,8 @@ jobs:
         echo Content of base directory:
         ls -als $BASE_PATH
         echo Path of _diag directory: "${BASE_PATH}/_diag"
-        echo "************************ CONTENT OF _diag DIRECTORY *********************"
-        ls -als "${BASE_PATH}/_diag"
+        # echo "************************ CONTENT OF _diag DIRECTORY *********************"
+        # ls -als "${BASE_PATH}/_diag"
         export RUNNER_LOG=`ls -t ${BASE_PATH}/_diag/Runner* | head -1`
         echo "Newest Runner log file: $RUNNER_LOG"
         echo "************************ CONTENT OF NEWEST RUNNER LOG *******************"
