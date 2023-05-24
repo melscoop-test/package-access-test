@@ -1,4 +1,4 @@
-name: Display Runner OS Details
+name: Output Runner Details
 
 on: 
   workflow_dispatch
@@ -13,7 +13,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Display MacOS Details
+    - name: MacOS Runner Details
       if: runner.os == 'macOS'
       run: |
         echo "OS Details:"
@@ -25,7 +25,7 @@ jobs:
         echo "Disk Details:"
         df -h
 
-    - name: Display Ubuntu Details
+    - name: Ubuntu Runner Details
       if: runner.os == 'Linux'
       run: |
         echo "OS Details:"
@@ -59,7 +59,7 @@ jobs:
 
 
 
-    - name: Display Windows Details
+    - name: Windows Runner Details
       if: runner.os == 'Windows'
       shell: pwsh
       run: |
