@@ -46,6 +46,14 @@ jobs:
         ls -als $BASE_PATH
         echo listing of work directory:
         ls -als $BASE_PATH/work
+        echo listing of runners directory:
+        ls -als $BASE_PATH/runners
+        echo listing of factory directory:
+        ls -als $BASE_PATH/factory
+        echo listing of perflog directory:
+        ls -als $BASE_PATH/perflog
+        echo listing of warmup directory:
+        ls -als $BASE_PATH/warmup
         echo listing of runner-diagnostics directory:
         ls -als $BASE_PATH/work/runner-diagnostics
         echo listing of runner-diagnostics/runner-diagnostics directory:
