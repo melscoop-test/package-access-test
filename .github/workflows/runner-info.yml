@@ -49,7 +49,8 @@ jobs:
         echo "************************ DIRECTORY TREE ******************************"
         tree 
         # echo "************************ CONTENT OF runner-diagnostics DIRECTORY *********************"
-        ls -als work/runner-diagnostics
+        # ls -als work
+        ls -als ../../work/runner-diagnostics
         
         # echo "************************ CONTENT OF _diag DIRECTORY *********************"
         ls -als "${BASE_PATH}"
