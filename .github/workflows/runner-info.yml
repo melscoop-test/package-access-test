@@ -38,6 +38,7 @@ jobs:
         df -h
         echo "************************ CHECKING ENV VARIABLES *************************"
         env
+        
         echo "************************ GETTING LOGS ***********************************"
         export BASE_PATH="${RUNNER_WORKSPACE}/../.."
         echo Base directory: $BASE_PATH
@@ -45,7 +46,10 @@ jobs:
         ls -als $BASE_PATH
         echo listing of work directory:
         ls -als $BASE_PATH/work
+        echo listing of runner-diagnostics directory:
+        ls -als $BASE_PATH/work/runner-diagnostics
         echo Path of _diag directory: "${BASE_PATH}/_diag"
+        
         echo "************************ DIRECTORY TREE ******************************"
         tree 
         # echo "************************ CONTENT OF runner DIRECTORY *********************"
