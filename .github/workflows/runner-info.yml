@@ -41,9 +41,14 @@ jobs:
         echo "************************ GETTING LOGS ***********************************"
         export BASE_PATH="${RUNNER_WORKSPACE}/../.."
         echo Base directory: $BASE_PATH
-        echo Content of base directory:
+        echo listing of base directory:
         ls -als $BASE_PATH
+        echo listing of work directory:
+        ls -als $BASE_PATH/work
         echo Path of _diag directory: "${BASE_PATH}/_diag"
+        echo "************************ DIRECTORY TREE of BASE PATH ******************************"
+        apt install tree -y
+        tree $BASE_PATH
         # echo "************************ CONTENT OF _diag DIRECTORY *********************"
         ls -als "${BASE_PATH}"
         export RUNNER_LOG=`ls -t ${BASE_PATH}/_diag/Runner* | head -1`
