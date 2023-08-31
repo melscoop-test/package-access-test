@@ -1,0 +1,32 @@
+name: runner log test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  runner_logs:
+    runs-on: self-hosted
+    steps:   
+      - name: get runner logs
+        run: |
+          echo "************************ CHECKING ENV VARIABLES *************************"
+          env
+          echo "************************ GETTING LOGS ***********************************"
+          export BASE_PATH="${RUNNER_WORKSPACE}/../.."
+          echo Base directory: $BASE_PATH
+          echo Content of base directory:
+          ls -als $BASE_PATH
+          echo Path of _diag directory: "${BASE_PATH}/_diag"
+          echo "************************ CONTENT OF _diag DIRECTORY *********************"
+          ls -als "${BASE_PATH}/_diag"
+          export RUNNER_LOG=`ls -t ${BASE_PATH}/_diag/Runner* | head -1`
+          echo "Newest Runner log file: $RUNNER_LOG"
+          echo "************************ CONTENT OF NEWEST RUNNER LOG *******************"
+          cat $RUNNER_LOG
+          echo "*************************************************************************"
+          export WORKER_LOG=`ls -t ${BASE_PATH}/_diag/Worker* | head -1`
+          echo "Newest Worker log file: $WORKER_LOG"
+          echo "************************ CONTENT OF NEWEST WORKER LOG *******************"
+          cat $WORKER_LOG
+          echo "*************************************************************************"
+          
