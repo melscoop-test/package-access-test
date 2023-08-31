@@ -39,10 +39,10 @@ jobs:
         echo "************************ CHECKING ENV VARIABLES *************************"
         env
         
-        echo "************************ GETTING LOGS ***********************************"
+        echo "************************ Disecting $RUNNER_WORKSPACE/../.. ***********************************"
         export BASE_PATH="${RUNNER_WORKSPACE}/../.."
         echo Base directory: $BASE_PATH
-        echo listing of base directory:
+        echo listing of base path directory:
         ls -als $BASE_PATH
         echo listing of work directory:
         ls -als $BASE_PATH/work
@@ -61,6 +61,13 @@ jobs:
         echo listing of _diag directory:
         sudo ls -als "${BASE_PATH}/_diag"
         echo Path of _diag directory: "${BASE_PATH}/_diag"
+
+        echo "************************ Disecting $RUNNER_WORKSPACE ***********************************"
+
+        echo Base directory: $BASE_PATH_ROOT
+        export BASE_PATH_ROOT="${RUNNER_WORKSPACE}"
+        echo listing of base path directory:
+        ls -als $BASE_PATH_ROOT
         
         echo "************************ DIRECTORY TREE ******************************"
         tree 
