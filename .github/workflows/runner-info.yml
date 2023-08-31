@@ -48,6 +48,10 @@ jobs:
         ls -als $BASE_PATH/work
         echo listing of runner-diagnostics directory:
         ls -als $BASE_PATH/work/runner-diagnostics
+        echo listing of runner-diagnostics/runner-diagnostics directory:
+        ls -als $BASE_PATH/work/runner-diagnostics/runner-diagnostics
+        echo listing of _diag directory:
+        ls -als "${BASE_PATH}/_diag"
         echo Path of _diag directory: "${BASE_PATH}/_diag"
         
         echo "************************ DIRECTORY TREE ******************************"
