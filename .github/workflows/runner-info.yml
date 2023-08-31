@@ -48,8 +48,8 @@ jobs:
         echo Path of _diag directory: "${BASE_PATH}/_diag"
         echo "************************ DIRECTORY TREE ******************************"
         tree 
-        # echo "************************ CONTENT OF runner-diagnostics DIRECTORY *********************"
-        ls -als work
+        # echo "************************ CONTENT OF runner DIRECTORY *********************"
+        ls -als 
         
         # echo "************************ CONTENT OF _diag DIRECTORY *********************"
         ls -als "${BASE_PATH}"
