@@ -46,19 +46,26 @@ jobs:
         echo listing of work directory:
         ls -als $BASE_PATH/work
         echo Path of _diag directory: "${BASE_PATH}/_diag"
-        echo "************************ DIRECTORY TREE of BASE PATH ******************************"
-        tree $BASE_PATH
+        echo "************************ DIRECTORY TREE ******************************"
+        tree 
+        # echo "************************ CONTENT OF runner-diagnostics DIRECTORY *********************"
+        ls -als work/runner-diagnostics
+        
         # echo "************************ CONTENT OF _diag DIRECTORY *********************"
         ls -als "${BASE_PATH}"
         export RUNNER_LOG=`ls -t ${BASE_PATH}/_diag/Runner* | head -1`
         echo "Newest Runner log file: $RUNNER_LOG"
+        
         echo "************************ CONTENT OF NEWEST RUNNER LOG *******************"
         cat $RUNNER_LOG
+        
         echo "*************************************************************************"
         export WORKER_LOG=`ls -t ${BASE_PATH}/_diag/Worker* | head -1`
         echo "Newest Worker log file: $WORKER_LOG"
+        
         echo "************************ CONTENT OF NEWEST WORKER LOG *******************"
         cat $WORKER_LOG
+        
         echo "*************************************************************************"
 
 
