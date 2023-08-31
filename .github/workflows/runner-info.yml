@@ -47,7 +47,7 @@ jobs:
         ls -als $BASE_PATH/work
         echo Path of _diag directory: "${BASE_PATH}/_diag"
         echo "************************ DIRECTORY TREE of BASE PATH ******************************"
-        apt install tree -y
+        sudo apt install tree -y
         tree $BASE_PATH
         # echo "************************ CONTENT OF _diag DIRECTORY *********************"
         ls -als "${BASE_PATH}"
